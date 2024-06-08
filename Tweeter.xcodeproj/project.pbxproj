@@ -18,6 +18,7 @@
 		C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEBA2C142E5A00396478 /* MessagesView.swift */; };
 		C384AEBD2C1434CC00396478 /* CreateTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEBC2C1434CC00396478 /* CreateTweetView.swift */; };
 		C384AEC12C14364800396478 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEC02C14364800396478 /* MultilineTextField.swift */; };
+		C384AEC32C143C3E00396478 /* TweetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEC22C143C3E00396478 /* TweetCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		C384AEBA2C142E5A00396478 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		C384AEBC2C1434CC00396478 /* CreateTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetView.swift; sourceTree = "<group>"; };
 		C384AEC02C14364800396478 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
+		C384AEC22C143C3E00396478 /* TweetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				C384AEB42C142DFE00396478 /* Feed.swift */,
+				C384AEC22C143C3E00396478 /* TweetCellView.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C384AEC32C143C3E00396478 /* TweetCellView.swift in Sources */,
 				C384AEBD2C1434CC00396478 /* CreateTweetView.swift in Sources */,
 				C384AEB72C142E3B00396478 /* SearchView.swift in Sources */,
 				C384AEB52C142DFE00396478 /* Feed.swift in Sources */,
