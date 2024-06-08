@@ -25,6 +25,8 @@
 		C384AECB2C14564E00396478 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AECA2C14564E00396478 /* Extensions.swift */; };
 		C384AECD2C1458BB00396478 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AECC2C1458BB00396478 /* NotificationCell.swift */; };
 		C384AECF2C145C3200396478 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AECE2C145C3200396478 /* MessageCell.swift */; };
+		C384AED12C147B9E00396478 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AED02C147B9E00396478 /* TopBar.swift */; };
+		C384AED32C147DC900396478 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AED22C147DC900396478 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		C384AECA2C14564E00396478 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C384AECC2C1458BB00396478 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		C384AECE2C145C3200396478 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		C384AED02C147B9E00396478 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		C384AED22C147DC900396478 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				C384AEB22C142B8900396478 /* Home.swift */,
+				C384AED02C147B9E00396478 /* TopBar.swift */,
+				C384AED22C147DC900396478 /* MainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C384AEC32C143C3E00396478 /* TweetCellView.swift in Sources */,
+				C384AED32C147DC900396478 /* MainView.swift in Sources */,
 				C384AECF2C145C3200396478 /* MessageCell.swift in Sources */,
 				C384AEC52C144A4100396478 /* SearchCell.swift in Sources */,
 				C384AEBD2C1434CC00396478 /* CreateTweetView.swift in Sources */,
@@ -300,6 +307,7 @@
 				C384AEC72C144BA600396478 /* SearchBarView.swift in Sources */,
 				C384AEB52C142DFE00396478 /* Feed.swift in Sources */,
 				C384AE992C1428DF00396478 /* ContentView.swift in Sources */,
+				C384AED12C147B9E00396478 /* TopBar.swift in Sources */,
 				C384AEB32C142B8900396478 /* Home.swift in Sources */,
 				C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */,
 				C384AEC12C14364800396478 /* MultilineTextField.swift in Sources */,
