@@ -16,6 +16,8 @@
 		C384AEB72C142E3B00396478 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEB62C142E3B00396478 /* SearchView.swift */; };
 		C384AEB92C142E4C00396478 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEB82C142E4C00396478 /* NotificationsView.swift */; };
 		C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEBA2C142E5A00396478 /* MessagesView.swift */; };
+		C384AEBD2C1434CC00396478 /* CreateTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEBC2C1434CC00396478 /* CreateTweetView.swift */; };
+		C384AEC12C14364800396478 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEC02C14364800396478 /* MultilineTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		C384AEB62C142E3B00396478 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		C384AEB82C142E4C00396478 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		C384AEBA2C142E5A00396478 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		C384AEBC2C1434CC00396478 /* CreateTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetView.swift; sourceTree = "<group>"; };
+		C384AEC02C14364800396478 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		C384AEAA2C142B3E00396478 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				C384AEBC2C1434CC00396478 /* CreateTweetView.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 		C384AEAB2C142B4200396478 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				C384AEC02C14364800396478 /* MultilineTextField.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -264,11 +270,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C384AEBD2C1434CC00396478 /* CreateTweetView.swift in Sources */,
 				C384AEB72C142E3B00396478 /* SearchView.swift in Sources */,
 				C384AEB52C142DFE00396478 /* Feed.swift in Sources */,
 				C384AE992C1428DF00396478 /* ContentView.swift in Sources */,
 				C384AEB32C142B8900396478 /* Home.swift in Sources */,
 				C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */,
+				C384AEC12C14364800396478 /* MultilineTextField.swift in Sources */,
 				C384AE972C1428DF00396478 /* Tweeter.swift in Sources */,
 				C384AEB92C142E4C00396478 /* NotificationsView.swift in Sources */,
 			);
