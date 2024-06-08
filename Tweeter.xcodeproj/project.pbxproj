@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C384AE972C1428DF00396478 /* TweeterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AE962C1428DF00396478 /* TweeterApp.swift */; };
+		C384AE972C1428DF00396478 /* Tweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AE962C1428DF00396478 /* Tweeter.swift */; };
 		C384AE992C1428DF00396478 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AE982C1428DF00396478 /* ContentView.swift */; };
 		C384AE9B2C1428E000396478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C384AE9A2C1428E000396478 /* Assets.xcassets */; };
 		C384AE9E2C1428E000396478 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C384AE9D2C1428E000396478 /* Preview Assets.xcassets */; };
+		C384AEB32C142B8900396478 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEB22C142B8900396478 /* Home.swift */; };
+		C384AEB52C142DFE00396478 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEB42C142DFE00396478 /* Feed.swift */; };
+		C384AEB72C142E3B00396478 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEB62C142E3B00396478 /* SearchView.swift */; };
+		C384AEB92C142E4C00396478 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEB82C142E4C00396478 /* NotificationsView.swift */; };
+		C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEBA2C142E5A00396478 /* MessagesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C384AE932C1428DF00396478 /* Tweeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tweeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C384AE962C1428DF00396478 /* TweeterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweeterApp.swift; sourceTree = "<group>"; };
+		C384AE962C1428DF00396478 /* Tweeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweeter.swift; sourceTree = "<group>"; };
 		C384AE982C1428DF00396478 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C384AE9A2C1428E000396478 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C384AE9D2C1428E000396478 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C384AEB22C142B8900396478 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		C384AEB42C142DFE00396478 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		C384AEB62C142E3B00396478 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		C384AEB82C142E4C00396478 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		C384AEBA2C142E5A00396478 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +61,12 @@
 		C384AE952C1428DF00396478 /* Tweeter */ = {
 			isa = PBXGroup;
 			children = (
-				C384AE962C1428DF00396478 /* TweeterApp.swift */,
+				C384AEA82C142B3000396478 /* Extensions */,
+				C384AEA72C142B2A00396478 /* Services */,
+				C384AEA62C142B2400396478 /* Model */,
+				C384AEA52C142B1D00396478 /* ViewModel */,
+				C384AEA42C142B1500396478 /* View */,
+				C384AE962C1428DF00396478 /* Tweeter.swift */,
 				C384AE982C1428DF00396478 /* ContentView.swift */,
 				C384AE9A2C1428E000396478 /* Assets.xcassets */,
 				C384AE9C2C1428E000396478 /* Preview Content */,
@@ -65,6 +80,118 @@
 				C384AE9D2C1428E000396478 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C384AEA42C142B1500396478 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C384AEB12C142B6600396478 /* Main */,
+				C384AEB02C142B6200396478 /* Feed */,
+				C384AEAF2C142B5E00396478 /* Search */,
+				C384AEAE2C142B5400396478 /* Notifications */,
+				C384AEAD2C142B4E00396478 /* Messages */,
+				C384AEAC2C142B4900396478 /* Authentication */,
+				C384AEAB2C142B4200396478 /* Items */,
+				C384AEAA2C142B3E00396478 /* Post */,
+				C384AEA92C142B3700396478 /* Profile */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C384AEA52C142B1D00396478 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C384AEA62C142B2400396478 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C384AEA72C142B2A00396478 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C384AEA82C142B3000396478 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C384AEA92C142B3700396478 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C384AEAA2C142B3E00396478 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		C384AEAB2C142B4200396478 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		C384AEAC2C142B4900396478 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C384AEAD2C142B4E00396478 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				C384AEBA2C142E5A00396478 /* MessagesView.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		C384AEAE2C142B5400396478 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				C384AEB82C142E4C00396478 /* NotificationsView.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		C384AEAF2C142B5E00396478 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C384AEB62C142E3B00396478 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		C384AEB02C142B6200396478 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				C384AEB42C142DFE00396478 /* Feed.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		C384AEB12C142B6600396478 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C384AEB22C142B8900396478 /* Home.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +264,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C384AEB72C142E3B00396478 /* SearchView.swift in Sources */,
+				C384AEB52C142DFE00396478 /* Feed.swift in Sources */,
 				C384AE992C1428DF00396478 /* ContentView.swift in Sources */,
-				C384AE972C1428DF00396478 /* TweeterApp.swift in Sources */,
+				C384AEB32C142B8900396478 /* Home.swift in Sources */,
+				C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */,
+				C384AE972C1428DF00396478 /* Tweeter.swift in Sources */,
+				C384AEB92C142E4C00396478 /* NotificationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
