@@ -157,7 +157,7 @@ struct SlideMenu: View {
         }
     }
 }
-
-#Preview {
-    SlideMenu()
-}
+//
+//#Preview {
+//    SlideMenu()
+//}
