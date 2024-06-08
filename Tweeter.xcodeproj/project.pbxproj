@@ -30,6 +30,9 @@
 		C384AED52C14803200396478 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AED42C14803200396478 /* SlideMenu.swift */; };
 		C384AED72C1481C600396478 /* FollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AED62C1481C600396478 /* FollowView.swift */; };
 		C384AED92C14866200396478 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AED82C14866200396478 /* MenuButton.swift */; };
+		C384AEDB2C149C1800396478 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEDA2C149C1800396478 /* UserProfile.swift */; };
+		C384AEDD2C149F3300396478 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEDC2C149F3300396478 /* BlurView.swift */; };
+		C384AEDF2C14ACF500396478 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEDE2C14ACF500396478 /* TabButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,9 @@
 		C384AED42C14803200396478 /* SlideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
 		C384AED62C1481C600396478 /* FollowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowView.swift; sourceTree = "<group>"; };
 		C384AED82C14866200396478 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		C384AEDA2C149C1800396478 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		C384AEDC2C149F3300396478 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		C384AEDE2C14ACF500396478 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,8 @@
 		C384AEA92C142B3700396478 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C384AEDA2C149C1800396478 /* UserProfile.swift */,
+				C384AEDC2C149F3300396478 /* BlurView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -177,6 +185,7 @@
 				C384AEC62C144BA600396478 /* SearchBarView.swift */,
 				C384AED62C1481C600396478 /* FollowView.swift */,
 				C384AED82C14866200396478 /* MenuButton.swift */,
+				C384AEDE2C14ACF500396478 /* TabButton.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -308,6 +317,7 @@
 			files = (
 				C384AEC32C143C3E00396478 /* TweetCellView.swift in Sources */,
 				C384AED32C147DC900396478 /* MainView.swift in Sources */,
+				C384AEDD2C149F3300396478 /* BlurView.swift in Sources */,
 				C384AED92C14866200396478 /* MenuButton.swift in Sources */,
 				C384AECF2C145C3200396478 /* MessageCell.swift in Sources */,
 				C384AEC52C144A4100396478 /* SearchCell.swift in Sources */,
@@ -322,9 +332,11 @@
 				C384AEB32C142B8900396478 /* Home.swift in Sources */,
 				C384AED72C1481C600396478 /* FollowView.swift in Sources */,
 				C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */,
+				C384AEDB2C149C1800396478 /* UserProfile.swift in Sources */,
 				C384AEC12C14364800396478 /* MultilineTextField.swift in Sources */,
 				C384AE972C1428DF00396478 /* Tweeter.swift in Sources */,
 				C384AEB92C142E4C00396478 /* NotificationsView.swift in Sources */,
+				C384AEDF2C14ACF500396478 /* TabButton.swift in Sources */,
 				C384AECD2C1458BB00396478 /* NotificationCell.swift in Sources */,
 				C384AECB2C14564E00396478 /* Extensions.swift in Sources */,
 			);
