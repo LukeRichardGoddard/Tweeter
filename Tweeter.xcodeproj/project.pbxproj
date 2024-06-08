@@ -27,6 +27,9 @@
 		C384AECF2C145C3200396478 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AECE2C145C3200396478 /* MessageCell.swift */; };
 		C384AED12C147B9E00396478 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AED02C147B9E00396478 /* TopBar.swift */; };
 		C384AED32C147DC900396478 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AED22C147DC900396478 /* MainView.swift */; };
+		C384AED52C14803200396478 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AED42C14803200396478 /* SlideMenu.swift */; };
+		C384AED72C1481C600396478 /* FollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AED62C1481C600396478 /* FollowView.swift */; };
+		C384AED92C14866200396478 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AED82C14866200396478 /* MenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		C384AECE2C145C3200396478 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		C384AED02C147B9E00396478 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		C384AED22C147DC900396478 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C384AED42C14803200396478 /* SlideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
+		C384AED62C1481C600396478 /* FollowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowView.swift; sourceTree = "<group>"; };
+		C384AED82C14866200396478 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,8 @@
 			children = (
 				C384AEC02C14364800396478 /* MultilineTextField.swift */,
 				C384AEC62C144BA600396478 /* SearchBarView.swift */,
+				C384AED62C1481C600396478 /* FollowView.swift */,
+				C384AED82C14866200396478 /* MenuButton.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -223,6 +231,7 @@
 				C384AEB22C142B8900396478 /* Home.swift */,
 				C384AED02C147B9E00396478 /* TopBar.swift */,
 				C384AED22C147DC900396478 /* MainView.swift */,
+				C384AED42C14803200396478 /* SlideMenu.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -299,9 +308,11 @@
 			files = (
 				C384AEC32C143C3E00396478 /* TweetCellView.swift in Sources */,
 				C384AED32C147DC900396478 /* MainView.swift in Sources */,
+				C384AED92C14866200396478 /* MenuButton.swift in Sources */,
 				C384AECF2C145C3200396478 /* MessageCell.swift in Sources */,
 				C384AEC52C144A4100396478 /* SearchCell.swift in Sources */,
 				C384AEBD2C1434CC00396478 /* CreateTweetView.swift in Sources */,
+				C384AED52C14803200396478 /* SlideMenu.swift in Sources */,
 				C384AEB72C142E3B00396478 /* SearchView.swift in Sources */,
 				C384AEC92C1453C000396478 /* SearchUserCell.swift in Sources */,
 				C384AEC72C144BA600396478 /* SearchBarView.swift in Sources */,
@@ -309,6 +320,7 @@
 				C384AE992C1428DF00396478 /* ContentView.swift in Sources */,
 				C384AED12C147B9E00396478 /* TopBar.swift in Sources */,
 				C384AEB32C142B8900396478 /* Home.swift in Sources */,
+				C384AED72C1481C600396478 /* FollowView.swift in Sources */,
 				C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */,
 				C384AEC12C14364800396478 /* MultilineTextField.swift in Sources */,
 				C384AE972C1428DF00396478 /* Tweeter.swift in Sources */,
