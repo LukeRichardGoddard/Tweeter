@@ -37,6 +37,7 @@
 		C384AEE32C14C29600396478 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEE22C14C29600396478 /* RegisterView.swift */; };
 		C384AEE52C14C43E00396478 /* CustomAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEE42C14C43E00396478 /* CustomAuthTextField.swift */; };
 		C384AEE72C14C61F00396478 /* SecureAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEE62C14C61F00396478 /* SecureAuthTextField.swift */; };
+		C384AEE92C14C8D100396478 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEE82C14C8D100396478 /* LogInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		C384AEE22C14C29600396478 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		C384AEE42C14C43E00396478 /* CustomAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthTextField.swift; sourceTree = "<group>"; };
 		C384AEE62C14C61F00396478 /* SecureAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAuthTextField.swift; sourceTree = "<group>"; };
+		C384AEE82C14C8D100396478 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			children = (
 				C384AEE02C14BA0B00396478 /* WelcomeView.swift */,
 				C384AEE22C14C29600396478 /* RegisterView.swift */,
+				C384AEE82C14C8D100396478 /* LogInView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				C384AEE32C14C29600396478 /* RegisterView.swift in Sources */,
 				C384AED72C1481C600396478 /* FollowView.swift in Sources */,
 				C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */,
+				C384AEE92C14C8D100396478 /* LogInView.swift in Sources */,
 				C384AEDB2C149C1800396478 /* UserProfile.swift in Sources */,
 				C384AEC12C14364800396478 /* MultilineTextField.swift in Sources */,
 				C384AE972C1428DF00396478 /* Tweeter.swift in Sources */,

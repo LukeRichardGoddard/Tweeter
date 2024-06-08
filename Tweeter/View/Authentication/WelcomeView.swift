@@ -94,16 +94,18 @@ struct WelcomeView: View {
                             .frame(width: (getRect().width / 3), height: 1)
                     }
                     
-                    RoundedRectangle(cornerRadius: 36)
-                        .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
-                        .frame(width: 320, height: 60, alignment: .center)
-                        .overlay {
-                            Text("Create Account")
-                                .fontWeight(.bold)
-                                .font(.title3)
-                                .foregroundColor(.white)
-                                .padding()
+                    NavigationLink(destination: RegisterView().navigationBarHidden(true)) {
+                        RoundedRectangle(cornerRadius: 36)
+                            .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
+                            .frame(width: 320, height: 60, alignment: .center)
+                            .overlay {
+                                Text("Create Account")
+                                    .fontWeight(.bold)
+                                    .font(.title3)
+                                    .foregroundColor(.white)
+                                    .padding()
                         }
+                    }
                     
                 }
                 .padding()
@@ -123,8 +125,10 @@ struct WelcomeView: View {
                     
                     HStack(spacing: 2) {
                         Text("Have an account already?")
-                        Text("Log in")
-                            .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
+                        NavigationLink(destination: LogInView().navigationBarHidden(true)) {
+                            Text("Log in")
+                                .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
+                        }
                     }
                 }
             }
