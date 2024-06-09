@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C380DCEC2C1615840017E7B6 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380DCEB2C1615840017E7B6 /* AuthViewModel.swift */; };
+		C380DCEE2C16159C0017E7B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380DCED2C16159C0017E7B6 /* User.swift */; };
 		C384AE972C1428DF00396478 /* Tweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AE962C1428DF00396478 /* Tweeter.swift */; };
 		C384AE992C1428DF00396478 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AE982C1428DF00396478 /* ContentView.swift */; };
 		C384AE9B2C1428E000396478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C384AE9A2C1428E000396478 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C380DCEB2C1615840017E7B6 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C380DCED2C16159C0017E7B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C384AE932C1428DF00396478 /* Tweeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tweeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C384AE962C1428DF00396478 /* Tweeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweeter.swift; sourceTree = "<group>"; };
 		C384AE982C1428DF00396478 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 		C384AEA52C142B1D00396478 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C380DCEB2C1615840017E7B6 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 		C384AEA62C142B2400396478 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C380DCED2C16159C0017E7B6 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 				C384AED32C147DC900396478 /* MainView.swift in Sources */,
 				C384AEDD2C149F3300396478 /* BlurView.swift in Sources */,
 				C384AED92C14866200396478 /* MenuButton.swift in Sources */,
+				C380DCEE2C16159C0017E7B6 /* User.swift in Sources */,
 				C384AECF2C145C3200396478 /* MessageCell.swift in Sources */,
 				C384AEC52C144A4100396478 /* SearchCell.swift in Sources */,
 				C384AEBD2C1434CC00396478 /* CreateTweetView.swift in Sources */,
@@ -350,6 +357,7 @@
 				C384AED72C1481C600396478 /* FollowView.swift in Sources */,
 				C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */,
 				C384AEE92C14C8D100396478 /* LogInView.swift in Sources */,
+				C380DCEC2C1615840017E7B6 /* AuthViewModel.swift in Sources */,
 				C384AEDB2C149C1800396478 /* UserProfile.swift in Sources */,
 				C384AEC12C14364800396478 /* MultilineTextField.swift in Sources */,
 				C384AE972C1428DF00396478 /* Tweeter.swift in Sources */,
