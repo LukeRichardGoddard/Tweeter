@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct ApiResponse: Codable {
+    var user: User
+    var token: String
+}
+
 struct User: Identifiable, Codable {
     var _id: String
     var id: String { return _id }

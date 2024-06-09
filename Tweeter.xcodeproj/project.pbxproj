@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C380DCEC2C1615840017E7B6 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380DCEB2C1615840017E7B6 /* AuthViewModel.swift */; };
 		C380DCEE2C16159C0017E7B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380DCED2C16159C0017E7B6 /* User.swift */; };
+		C380DCF02C161F090017E7B6 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380DCEF2C161F090017E7B6 /* AuthServices.swift */; };
 		C384AE972C1428DF00396478 /* Tweeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AE962C1428DF00396478 /* Tweeter.swift */; };
 		C384AE992C1428DF00396478 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AE982C1428DF00396478 /* ContentView.swift */; };
 		C384AE9B2C1428E000396478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C384AE9A2C1428E000396478 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		C380DCEB2C1615840017E7B6 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C380DCED2C16159C0017E7B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C380DCEF2C161F090017E7B6 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		C384AE932C1428DF00396478 /* Tweeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tweeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C384AE962C1428DF00396478 /* Tweeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweeter.swift; sourceTree = "<group>"; };
 		C384AE982C1428DF00396478 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		C384AEA72C142B2A00396478 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C380DCEF2C161F090017E7B6 /* AuthServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				C384AEC32C143C3E00396478 /* TweetCellView.swift in Sources */,
 				C384AED32C147DC900396478 /* MainView.swift in Sources */,
 				C384AEDD2C149F3300396478 /* BlurView.swift in Sources */,
+				C380DCF02C161F090017E7B6 /* AuthServices.swift in Sources */,
 				C384AED92C14866200396478 /* MenuButton.swift in Sources */,
 				C380DCEE2C16159C0017E7B6 /* User.swift in Sources */,
 				C384AECF2C145C3200396478 /* MessageCell.swift in Sources */,
