@@ -9,6 +9,8 @@ import SwiftUI
 
 struct UserProfile: View {
     
+    let user: User
+    
     @State var offset: CGFloat = 0
     @State var titleOffset: CGFloat = 0
     @State var currentTab = "Tweets"
@@ -37,7 +39,7 @@ struct UserProfile: View {
                                 .opacity(blurViewOpacity())
                             
                             VStack(spacing: 5) {
-                                Text("Cem")
+                                Text(self.user.name)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                                 
@@ -86,25 +88,25 @@ struct UserProfile: View {
                     .padding(.bottom, -10)
                     
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Cem")
+                        Text(self.user.name)
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(.primary)
                             
-                        Text("@cem_salta")
+                        Text("@\(self.user.name)")
                             .foregroundColor(.gray)
                         
                         Text("I don't know what I don't know. So, I try to figure out what I don't know. 42 Founder.")
                         
                         HStack(spacing: 5) {
-                            Text("13")
+                            Text("\(self.user.followers.count)")
                                 .foregroundColor(.primary)
                                 .fontWeight(.bold)
                             
                             Text("Followers")
                                 .foregroundColor(.gray)
                             
-                            Text("680")
+                            Text("\(self.user.following.count)")
                                 .foregroundColor(.primary)
                                 .fontWeight(.bold)
                                 .padding(.leading, 10)
@@ -195,8 +197,4 @@ struct UserProfile: View {
         let scale = 1.8 - (progress < 1.0 ? progress : 1)
         return scale < 1 ? scale : 1
     }
-}
-
-#Preview {
-    UserProfile()
 }

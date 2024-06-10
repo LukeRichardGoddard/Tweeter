@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+var menuButtons = ["Profile", "Lists", "Topics", "Bookmarks", "Moments"]
+
 struct SlideMenu: View {
     
     @State var show = false
-    
-    var menuButtons = ["Profile", "Lists", "Topics", "Bookmarks", "Moments"]
+    @ObservedObject var viewModel: AuthViewModel
     
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     var width = UIScreen.main.bounds.width
@@ -20,24 +21,26 @@ struct SlideMenu: View {
         VStack {
             HStack(spacing: 0) {
                 VStack(alignment: .leading) {
-                    Image("logo")
-                        .resizable()
-                        .frame(width: 60, height: 60)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                    
+                    NavigationLink(destination: UserProfile(user: viewModel.currentUser!)) {
+                        Image("logo")
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    }
                     HStack(alignment: .top, spacing: 12) {
                         VStack(alignment: .leading, spacing: 12, content: {
-                            Text("Cem")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                            
-                            Text("@cem_salta")
+                            NavigationLink(destination: UserProfile(user: viewModel.currentUser!)) {
+                                Text(viewModel.currentUser!.name)
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                            }
+                            Text(viewModel.currentUser!.username)
                                 .foregroundColor(.gray)
                             
                             HStack(spacing: 20, content: {
-                                FollowView(count: 12, title: "Following")
-                                FollowView(count: 16, title: "Followers")
+                                FollowView(count: viewModel.currentUser!.following.count, title: "Following")
+                                FollowView(count: viewModel.currentUser!.followers.count, title: "Followers")
                             })
                             .padding(.top, 10)
                             
@@ -59,7 +62,9 @@ struct SlideMenu: View {
                     
                     VStack(alignment: .leading) {
                         ForEach(menuButtons, id: \.self) { menuButton in
-                            MenuButton(title: menuButton)
+                            NavigationLink(destination: UserProfile(user: viewModel.currentUser!)) {
+                                MenuButton(title: menuButton)
+                            }
                         }
                         
                         Divider()
@@ -157,7 +162,3 @@ struct SlideMenu: View {
         }
     }
 }
-//
-//#Preview {
-//    SlideMenu()
-//}
