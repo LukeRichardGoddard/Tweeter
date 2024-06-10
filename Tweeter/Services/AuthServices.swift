@@ -66,13 +66,13 @@ public class AuthServices {
             let task = session.dataTask(with: request) { data, res, err in
                 
                 guard err == nil else { return }
-                guard data == data else {
+                guard let data = data else {
                     completion(.failure(.noData))
                     return
                 }
                 
                 do {
-                    if let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String:Any] {
+                    if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] {
                         completion(.success(data))
                     }
                 } catch {
