@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TweetCellView: View {
     
@@ -37,17 +38,20 @@ struct TweetCellView: View {
                     Text(self.viewModel.tweet.text)
                         .frame(maxHeight: 100, alignment: .top)
                     
-//                    if let tweetImage = tweetImage {
-//                        GeometryReader { proxy in
-//                            Image(tweetImage)
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fill)
-//                                .frame(width: proxy.frame(in: .global).width, height: 250)
-//                                .cornerRadius(15)
-//                        }.frame(height: 250)
+//                    if let imageId = viewModel.tweet.id {
+//                        
+//                        if viewModel.tweet.image == "true" {
+//                            
+//                            GeometryReader { proxy in
+//                                
+//                            }
+//                            
+//                        }
+//                        
 //                    }
                         
                 })
+                Spacer()
             })
             
             // Cell bottom
