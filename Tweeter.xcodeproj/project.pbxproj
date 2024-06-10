@@ -12,6 +12,7 @@
 		C361841E2C16F0E900A1C631 /* CreateTweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C361841D2C16F0E900A1C631 /* CreateTweetViewModel.swift */; };
 		C36184202C16F1B500A1C631 /* RequestServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C361841F2C16F1B500A1C631 /* RequestServices.swift */; };
 		C36184222C17018200A1C631 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36184212C17018200A1C631 /* ImagePicker.swift */; };
+		C36184242C170BE300A1C631 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36184232C170BE300A1C631 /* ImageUploader.swift */; };
 		C380DCEC2C1615840017E7B6 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380DCEB2C1615840017E7B6 /* AuthViewModel.swift */; };
 		C380DCEE2C16159C0017E7B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380DCED2C16159C0017E7B6 /* User.swift */; };
 		C380DCF02C161F090017E7B6 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380DCEF2C161F090017E7B6 /* AuthServices.swift */; };
@@ -24,7 +25,7 @@
 		C384AEB72C142E3B00396478 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEB62C142E3B00396478 /* SearchView.swift */; };
 		C384AEB92C142E4C00396478 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEB82C142E4C00396478 /* NotificationsView.swift */; };
 		C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEBA2C142E5A00396478 /* MessagesView.swift */; };
-		C384AEBD2C1434CC00396478 /* CreateTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEBC2C1434CC00396478 /* CreateTweetView.swift */; };
+		C384AEBD2C1434CC00396478 /* CreateTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEBC2C1434CC00396478 /* CreateTweet.swift */; };
 		C384AEC12C14364800396478 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEC02C14364800396478 /* MultilineTextField.swift */; };
 		C384AEC32C143C3E00396478 /* TweetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEC22C143C3E00396478 /* TweetCellView.swift */; };
 		C384AEC52C144A4100396478 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEC42C144A4100396478 /* SearchCell.swift */; };
@@ -54,6 +55,7 @@
 		C361841D2C16F0E900A1C631 /* CreateTweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetViewModel.swift; sourceTree = "<group>"; };
 		C361841F2C16F1B500A1C631 /* RequestServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestServices.swift; sourceTree = "<group>"; };
 		C36184212C17018200A1C631 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C36184232C170BE300A1C631 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		C380DCEB2C1615840017E7B6 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C380DCED2C16159C0017E7B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C380DCEF2C161F090017E7B6 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
@@ -67,7 +69,7 @@
 		C384AEB62C142E3B00396478 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		C384AEB82C142E4C00396478 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		C384AEBA2C142E5A00396478 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
-		C384AEBC2C1434CC00396478 /* CreateTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetView.swift; sourceTree = "<group>"; };
+		C384AEBC2C1434CC00396478 /* CreateTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweet.swift; sourceTree = "<group>"; };
 		C384AEC02C14364800396478 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 		C384AEC22C143C3E00396478 /* TweetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellView.swift; sourceTree = "<group>"; };
 		C384AEC42C144A4100396478 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				C380DCEF2C161F090017E7B6 /* AuthServices.swift */,
 				C361841F2C16F1B500A1C631 /* RequestServices.swift */,
+				C36184232C170BE300A1C631 /* ImageUploader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -222,7 +225,7 @@
 		C384AEAA2C142B3E00396478 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				C384AEBC2C1434CC00396478 /* CreateTweetView.swift */,
+				C384AEBC2C1434CC00396478 /* CreateTweet.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -381,7 +384,7 @@
 				C36184222C17018200A1C631 /* ImagePicker.swift in Sources */,
 				C384AECF2C145C3200396478 /* MessageCell.swift in Sources */,
 				C384AEC52C144A4100396478 /* SearchCell.swift in Sources */,
-				C384AEBD2C1434CC00396478 /* CreateTweetView.swift in Sources */,
+				C384AEBD2C1434CC00396478 /* CreateTweet.swift in Sources */,
 				C384AED52C14803200396478 /* SlideMenu.swift in Sources */,
 				C384AEB72C142E3B00396478 /* SearchView.swift in Sources */,
 				C384AEC92C1453C000396478 /* SearchUserCell.swift in Sources */,
@@ -393,6 +396,7 @@
 				C384AEE52C14C43E00396478 /* CustomAuthTextField.swift in Sources */,
 				C384AEE32C14C29600396478 /* RegisterView.swift in Sources */,
 				C384AED72C1481C600396478 /* FollowView.swift in Sources */,
+				C36184242C170BE300A1C631 /* ImageUploader.swift in Sources */,
 				C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */,
 				C384AEE92C14C8D100396478 /* LogInView.swift in Sources */,
 				C380DCEC2C1615840017E7B6 /* AuthViewModel.swift in Sources */,

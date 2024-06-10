@@ -99,7 +99,7 @@ struct Home: View {
                 .padding(.bottom, 65)
             }
             .sheet(isPresented: $showCreateTweet, content: {
-                CreateTweetView(show: $showCreateTweet, text: text)
+                CreateTweet(show: $showCreateTweet, text: text)
             })
         }
     }
