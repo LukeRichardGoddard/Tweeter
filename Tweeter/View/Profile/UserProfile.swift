@@ -161,7 +161,14 @@ struct UserProfile: View {
                     
                     VStack(spacing: 18) {
                         
+                        TweetCellView(tweet: "Hey Tim, are those regular glasses?", tweetImage: "post")
                         
+                        Divider()
+                        
+                        ForEach(0..<20, id: \.self) { _ in
+                            TweetCellView(tweet: sampleText)
+                            Divider()
+                        }
                         
                     }
                     .padding(.top)
