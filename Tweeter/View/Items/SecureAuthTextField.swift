@@ -20,7 +20,7 @@ struct SecureAuthTextField: View {
                 }
                 SecureField("", text: $text)
                     .frame(height: 45)
-                    .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
+                    .foregroundColor(K.Colors.tweeterBlue)
             }
             
             Rectangle()

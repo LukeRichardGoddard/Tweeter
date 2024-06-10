@@ -21,7 +21,7 @@ struct User: Identifiable, Codable {
     var location: String?
     var bio: String?
     var website: String?
-    var avatarExists: Bool
+    var avatarExists: Bool?
     var followers: [String]
     var following: [String]
 }

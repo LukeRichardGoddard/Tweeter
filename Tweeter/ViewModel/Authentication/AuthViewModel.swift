@@ -28,6 +28,8 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    static var shared = AuthViewModel()
+    
     func login(email: String, password: String) {
         
         let defaults = UserDefaults.standard
@@ -35,12 +37,17 @@ class AuthViewModel: ObservableObject {
         AuthServices.login(email: email, password: password) { result in
             switch result {
             case .success(let data):
-                guard let response = try? JSONDecoder().decode(ApiResponse.self, from: data as! Data) else { return }
-                DispatchQueue.main.async {
-                    defaults.set(response.token, forKey: "jsonwebtoken")
-                    defaults.set(response.user.id, forKey: "userid")
-                    self.isAuthenticated = true
-                    self.currentUser = response.user
+                do {
+                    let response = try JSONDecoder().decode(ApiResponse.self, from: data!)
+                    print("response: \(response)")
+                    DispatchQueue.main.async {
+                        defaults.set(response.token, forKey: "jsonwebtoken")
+                        defaults.set(response.user.id, forKey: "userid")
+                        self.isAuthenticated = true
+                        self.currentUser = response.user
+                    }
+                } catch {
+                    print(error)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -65,14 +72,14 @@ class AuthViewModel: ObservableObject {
         AuthServices.fetchUser(id: userId) { result in
             switch result {
             case .success(let data):
-                guard let user = try? JSONDecoder().decode(ApiResponse.self, from: data as! Data) else {
+                guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else {
                     return
                 }
                 
                 DispatchQueue.main.async {
-                    UserDefaults.standard.setValue(user.user.id, forKey: "userid")
+                    UserDefaults.standard.setValue(user.id, forKey: "userid")
                     self.isAuthenticated = true
-                    self.currentUser = user.user
+                    self.currentUser = user
                     print(user)
                 }
             case .failure(let error):
@@ -82,6 +89,15 @@ class AuthViewModel: ObservableObject {
     }
     
     func logout() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
         
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+        
+        DispatchQueue.main.async {
+            self.isAuthenticated = false
+        }
     }
 }

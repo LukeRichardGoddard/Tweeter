@@ -5,7 +5,7 @@
 //  Created by Luke Goddard on 10/6/2024.
 //
 
-import Foundation
+import SwiftUI
 
 struct K {
     
@@ -13,4 +13,7 @@ struct K {
         static let server = "http://192.168.1.99:3000"
     }
     
+    struct Colors {
+        static let tweeterBlue = Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255)
+    }
 }

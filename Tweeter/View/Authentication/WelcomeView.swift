@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -96,7 +99,7 @@ struct WelcomeView: View {
                     
                     NavigationLink(destination: RegisterView().navigationBarHidden(true)) {
                         RoundedRectangle(cornerRadius: 36)
-                            .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
+                            .foregroundColor(K.Colors.tweeterBlue)
                             .frame(width: 320, height: 60, alignment: .center)
                             .overlay {
                                 Text("Create Account")
@@ -114,10 +117,10 @@ struct WelcomeView: View {
                     VStack {
                         Text("By signing up, you agree to our ")
                         + Text("Terms")
-                            .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
+                            .foregroundColor(K.Colors.tweeterBlue)
                         + Text(",")
                         + Text(" Privacy Policy")
-                            .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
+                            .foregroundColor(K.Colors.tweeterBlue)
                         + Text(" and Cookie Use")
                         
                     }
@@ -127,7 +130,7 @@ struct WelcomeView: View {
                         Text("Have an account already?")
                         NavigationLink(destination: LogInView().navigationBarHidden(true)) {
                             Text("Log in")
-                                .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
+                                .foregroundColor(K.Colors.tweeterBlue)
                         }
                     }
                 }

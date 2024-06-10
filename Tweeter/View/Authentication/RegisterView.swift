@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    @StateObject var viewModel = AuthViewModel()
+    @EnvironmentObject var viewModel: AuthViewModel
     
     @State var name = ""
     @State var email = ""
@@ -63,7 +63,7 @@ struct RegisterView: View {
                     }, label: {
                         Capsule()
                             .frame(width: 60, height: 30, alignment: .center)
-                            .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
+                            .foregroundColor(K.Colors.tweeterBlue)
                             .overlay(
                                 Text("Next")
                                     .foregroundColor(.white))

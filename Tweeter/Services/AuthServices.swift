@@ -73,7 +73,7 @@ public class AuthServices {
                 
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String:Any] {
-                        
+                        completion(.success(data))
                     }
                 } catch {
                     completion(.failure(.decodingError))
@@ -104,11 +104,9 @@ public class AuthServices {
                 return
             }
             
-            completion(.success(data))
-            
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] {
-                    
+                    completion(.success(data))
                 }
             } catch {
                 completion(.failure(.invalidCredentials))
