@@ -9,14 +9,16 @@ import SwiftUI
 
 struct Feed: View {
     
+    @ObservedObject var viewModel = FeedViewModel()
     let user: User
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 18, content: {
                 TweetCellView(tweet: "Hey Tim, are those regular glasses?", tweetImage: "post")
-                ForEach(1...20, id: \.self) { i in
-                    TweetCellView(tweet: sampleText)
+                Text("\(viewModel.tweets.count) tweets")
+                List(viewModel.tweets) { i in
+                    TweetCellView(tweet: i.text)
                     Divider()
                 }
             })

@@ -11,6 +11,12 @@ class FeedViewModel: ObservableObject {
     
     @Published var tweets = [Tweet]()
     
+    init() {
+        print("fetching tweets")
+        fetchTweets()
+        print("\(tweets.count) tweets fetched")
+    }
+    
     func fetchTweets() {
         
         RequestServices.requestDomain = "\(K.Network.server)/tweets"
@@ -18,10 +24,17 @@ class FeedViewModel: ObservableObject {
         RequestServices.fetchTweets { result in
             switch result {
                 case .success(let data):
-                    guard let tweets = try? JSONDecoder().decode([Tweet].self, from: data as! Data) else { return }
-                    DispatchQueue.main.async {
-                        self.tweets = tweets
-                    }
+                do {
+                    print("try JSONDecoder")
+                    let tweets = try JSONDecoder().decode([Tweet].self, from: data!)
+                    print("tweets: \(tweets)")
+                } catch {
+                    print(error)
+                }
+                guard let tweets = try? JSONDecoder().decode([Tweet].self, from: data as! Data) else { return }
+                DispatchQueue.main.async {
+                    self.tweets = tweets
+                }
                 case .failure(let error):
                     print(error.localizedDescription)
             }
