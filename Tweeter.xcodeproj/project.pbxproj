@@ -94,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C36184192C16CF9200A1C631 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				C380DCEB2C1615840017E7B6 /* AuthViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		C384AE8A2C1428DF00396478 = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +161,7 @@
 		C384AEA52C142B1D00396478 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C380DCEB2C1615840017E7B6 /* AuthViewModel.swift */,
+				C36184192C16CF9200A1C631 /* Authentication */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
