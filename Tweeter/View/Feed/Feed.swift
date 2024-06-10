@@ -14,11 +14,10 @@ struct Feed: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 18, content: {
-                TweetCellView(tweet: "Hey Tim, are those regular glasses?", tweetImage: "post")
-                Text("\(viewModel.tweets.count) tweets")
-                List(viewModel.tweets) { i in
-                    TweetCellView(tweet: i.text)
+            LazyVStack(spacing: 18, content: {
+                ForEach(viewModel.tweets) { tweet in
+                    Text("\(viewModel.tweets.count) tweets")
+                    TweetCellView(viewModel: TweetCellViewModel(tweet: tweet))
                     Divider()
                 }
             })

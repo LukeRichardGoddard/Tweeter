@@ -48,6 +48,7 @@
 		C384AEE72C14C61F00396478 /* SecureAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEE62C14C61F00396478 /* SecureAuthTextField.swift */; };
 		C384AEE92C14C8D100396478 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEE82C14C8D100396478 /* LogInView.swift */; };
 		C3B063DB2C1761B900BD69A1 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B063DA2C1761B900BD69A1 /* FeedViewModel.swift */; };
+		C3B063DD2C17A52C00BD69A1 /* TweetCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B063DC2C17A52C00BD69A1 /* TweetCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		C384AEE62C14C61F00396478 /* SecureAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAuthTextField.swift; sourceTree = "<group>"; };
 		C384AEE82C14C8D100396478 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		C3B063DA2C1761B900BD69A1 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		C3B063DC2C17A52C00BD69A1 /* TweetCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				C3B063DA2C1761B900BD69A1 /* FeedViewModel.swift */,
+				C3B063DC2C17A52C00BD69A1 /* TweetCellViewModel.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B063DD2C17A52C00BD69A1 /* TweetCellViewModel.swift in Sources */,
 				C384AEC32C143C3E00396478 /* TweetCellView.swift in Sources */,
 				C384AED32C147DC900396478 /* MainView.swift in Sources */,
 				C384AEDD2C149F3300396478 /* BlurView.swift in Sources */,
