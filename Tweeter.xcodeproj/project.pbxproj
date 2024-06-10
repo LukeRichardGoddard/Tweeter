@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C36184182C16B17C00A1C631 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36184172C16B17C00A1C631 /* Constants.swift */; };
 		C380DCEC2C1615840017E7B6 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380DCEB2C1615840017E7B6 /* AuthViewModel.swift */; };
 		C380DCEE2C16159C0017E7B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380DCED2C16159C0017E7B6 /* User.swift */; };
 		C380DCF02C161F090017E7B6 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C380DCEF2C161F090017E7B6 /* AuthServices.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C36184172C16B17C00A1C631 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C380DCEB2C1615840017E7B6 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C380DCED2C16159C0017E7B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C380DCEF2C161F090017E7B6 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				C384AECA2C14564E00396478 /* Extensions.swift */,
+				C36184172C16B17C00A1C631 /* Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */,
 				C384AEE92C14C8D100396478 /* LogInView.swift in Sources */,
 				C380DCEC2C1615840017E7B6 /* AuthViewModel.swift in Sources */,
+				C36184182C16B17C00A1C631 /* Constants.swift in Sources */,
 				C384AEDB2C149C1800396478 /* UserProfile.swift in Sources */,
 				C384AEC12C14364800396478 /* MultilineTextField.swift in Sources */,
 				C384AE972C1428DF00396478 /* Tweeter.swift in Sources */,

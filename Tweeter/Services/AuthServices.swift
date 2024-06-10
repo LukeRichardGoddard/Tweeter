@@ -20,12 +20,23 @@ enum AuthenticationError: Error {
 
 public class AuthServices {
     
-    public static var requestDomain = ""
+    static func login(email: String, password: String, completion: @escaping (_ result: Result<Data?, AuthenticationError>) -> Void) {
+        let urlString = URL(string: "\(K.Network.server)/users/login")!
+        
+        makeRequest(urlString: urlString, reqBody: ["email": email, "password": password]) { result in
+            switch result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(.invalidCredentials))
+            }
+        }
+    }
     
     static func register(email: String, username: String, password: String, name: String, completion: @escaping (_ result: Result<Data?, AuthenticationError>) -> Void) {
-        let urlString = URL(string: "http://192.168.1.99:3000/users")!
+        let urlString = URL(string: "\(K.Network.server)/users")!
         
-        makeRequest(urlString: urlString, reqBody: ["email" : email, "username": username, "name": name, "password": password]) { result in
+        makeRequest(urlString: urlString, reqBody: ["email" : email.lowercased(), "username": username, "name": name, "password": password]) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))
