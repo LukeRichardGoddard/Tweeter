@@ -47,6 +47,7 @@
 		C384AEE52C14C43E00396478 /* CustomAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEE42C14C43E00396478 /* CustomAuthTextField.swift */; };
 		C384AEE72C14C61F00396478 /* SecureAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEE62C14C61F00396478 /* SecureAuthTextField.swift */; };
 		C384AEE92C14C8D100396478 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C384AEE82C14C8D100396478 /* LogInView.swift */; };
+		C3B063DB2C1761B900BD69A1 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B063DA2C1761B900BD69A1 /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		C384AEE42C14C43E00396478 /* CustomAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthTextField.swift; sourceTree = "<group>"; };
 		C384AEE62C14C61F00396478 /* SecureAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAuthTextField.swift; sourceTree = "<group>"; };
 		C384AEE82C14C8D100396478 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		C3B063DA2C1761B900BD69A1 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		C384AEA52C142B1D00396478 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C3B063D92C1761A200BD69A1 /* Feed */,
 				C361841C2C16F0CA00A1C631 /* Post */,
 				C36184192C16CF9200A1C631 /* Authentication */,
 			);
@@ -303,6 +306,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		C3B063D92C1761A200BD69A1 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				C3B063DA2C1761B900BD69A1 /* FeedViewModel.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -411,6 +422,7 @@
 				C384AEDF2C14ACF500396478 /* TabButton.swift in Sources */,
 				C384AECD2C1458BB00396478 /* NotificationCell.swift in Sources */,
 				C384AECB2C14564E00396478 /* Extensions.swift in Sources */,
+				C3B063DB2C1761B900BD69A1 /* FeedViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
