@@ -9,8 +9,11 @@ import SwiftUI
 
 struct TweetCellView: View {
     
-    var tweet: String
-    var tweetImage: String?
+    @ObservedObject var viewModel: TweetCellViewModel
+    
+    init(viewModel: TweetCellViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack {
@@ -27,22 +30,22 @@ struct TweetCellView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.primary)
                         +
-                        Text("@cem_salta")
+                        Text("@\(self.viewModel.tweet.username)")
                             .foregroundColor(.gray)
                     )
                     
-                    Text(tweet)
+                    Text(self.viewModel.tweet.text)
                         .frame(maxHeight: 100, alignment: .top)
                     
-                    if let tweetImage = tweetImage {
-                        GeometryReader { proxy in
-                            Image(tweetImage)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: proxy.frame(in: .global).width, height: 250)
-                                .cornerRadius(15)
-                        }.frame(height: 250)
-                    }
+//                    if let tweetImage = tweetImage {
+//                        GeometryReader { proxy in
+//                            Image(tweetImage)
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fill)
+//                                .frame(width: proxy.frame(in: .global).width, height: 250)
+//                                .cornerRadius(15)
+//                        }.frame(height: 250)
+//                    }
                         
                 })
             })
@@ -86,10 +89,6 @@ struct TweetCellView: View {
             .padding(.top, 4)
         }
     }
-}
-
-#Preview {
-    TweetCellView(tweet: sampleText, tweetImage: "post")
 }
 
 var sampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
