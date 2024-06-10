@@ -38,18 +38,21 @@ struct TweetCellView: View {
                     Text(self.viewModel.tweet.text)
                         .frame(maxHeight: 100, alignment: .top)
                     
-//                    if let imageId = viewModel.tweet.id {
-//                        
-//                        if viewModel.tweet.image == "true" {
-//                            
-//                            GeometryReader { proxy in
-//                                
-//                            }
-//                            
-//                        }
-//                        
-//                    }
+                    let imageId = viewModel.tweet.id
+                    
+                    if viewModel.tweet.image == "true" {
                         
+                        GeometryReader { proxy in
+                            KFImage(URL(string: "\(K.Network.server)/tweets/\(imageId)/image"))
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: proxy.frame(in: .global).width, height: 250)
+                                .cornerRadius(15)
+                        }
+                        .frame(height: 250)
+                        
+                    }
+                    
                 })
                 Spacer()
             })
@@ -96,7 +99,7 @@ struct TweetCellView: View {
 }
 
 #Preview {
-    TweetCellView(viewModel: TweetCellViewModel(tweet: Tweet(_id: "6666f71dcaef24bb4329285b", text: "I love flowers", userId: "66669030caef24bb432926a7", username: "Lukerg321", user: "66669030caef24bb432926a7", image: nil, likes: [])))
+    TweetCellView(viewModel: TweetCellViewModel(tweet: Tweet(_id: "6666f71dcaef24bb4329285b", text: "I love flowers", userId: "66669030caef24bb432926a7", username: "Lukerg321", user: "66669030caef24bb432926a7", image: "true", likes: [])))
 }
 
 var sampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
