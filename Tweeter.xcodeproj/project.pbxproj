@@ -50,6 +50,7 @@
 		C3B063DB2C1761B900BD69A1 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B063DA2C1761B900BD69A1 /* FeedViewModel.swift */; };
 		C3B063DD2C17A52C00BD69A1 /* TweetCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B063DC2C17A52C00BD69A1 /* TweetCellViewModel.swift */; };
 		C3B063E02C17AC3900BD69A1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C3B063DF2C17AC3900BD69A1 /* Kingfisher */; };
+		C3B063E22C17BDEF00BD69A1 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B063E12C17BDEF00BD69A1 /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		C384AEE82C14C8D100396478 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		C3B063DA2C1761B900BD69A1 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		C3B063DC2C17A52C00BD69A1 /* TweetCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellViewModel.swift; sourceTree = "<group>"; };
+		C3B063E12C17BDEF00BD69A1 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 			children = (
 				C384AEDA2C149C1800396478 /* UserProfile.swift */,
 				C384AEDC2C149F3300396478 /* BlurView.swift */,
+				C3B063E12C17BDEF00BD69A1 /* EditProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				C384AEE32C14C29600396478 /* RegisterView.swift in Sources */,
 				C384AED72C1481C600396478 /* FollowView.swift in Sources */,
 				C36184242C170BE300A1C631 /* ImageUploader.swift in Sources */,
+				C3B063E22C17BDEF00BD69A1 /* EditProfileView.swift in Sources */,
 				C384AEBB2C142E5A00396478 /* MessagesView.swift in Sources */,
 				C384AEE92C14C8D100396478 /* LogInView.swift in Sources */,
 				C380DCEC2C1615840017E7B6 /* AuthViewModel.swift in Sources */,
