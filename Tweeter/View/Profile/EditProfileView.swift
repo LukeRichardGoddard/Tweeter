@@ -10,14 +10,23 @@ import Kingfisher
 
 struct EditProfileView: View {
     
+    @Binding var user: User
     @State var profileImage: Image?
     @State private var selectedImage: UIImage?
-    @State var name = ""
-    @State var location = ""
-    @State var bio = ""
-    @State var websire = ""
+    @State var name: String
+    @State var location: String
+    @State var bio: String
+    @State var website: String
     
     @State var imagePickerPresented = false
+    
+    init(user: Binding<User>) {
+        self._user = user
+        self._name = State(initialValue: _user.name.wrappedValue)
+        self._location = State(initialValue: _user.location.wrappedValue ?? "")
+        self._bio = State(initialValue: _user.bio.wrappedValue ?? "")
+        self._website = State(initialValue: _user.website.wrappedValue ?? "")
+    }
     
     var body: some View {
         VStack {
@@ -64,7 +73,7 @@ struct EditProfileView: View {
                             KFImage(URL(string: "\(K.Network.server)/users/id/avatar"))
                                 .resizable()
                                 .placeholder {
-                                    Image("Profile")
+                                    Image("blankpp")
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .frame(width: 75, height: 75)
@@ -89,23 +98,23 @@ struct EditProfileView: View {
                     }
                     else if let image = profileImage {
                         VStack {
-                            HStack(alignment: .top) {
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 75, height: 75)
-                                    .clipShape(Circle())
-                                    .padding(8)
-                                    .background(Color.white)
-                                    .clipShape(Circle())
-                                    .offset(y: -20)
-                            }
-                            .padding()
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 75, height: 75)
+                                .clipShape(Circle())
+                                .padding(8)
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                .offset(y: -20)
                         }
                         .padding(.leading, 12)
                     }
                     
                     Spacer()
+                }
+                .onAppear {
+                    KingfisherManager.shared.cache.clearCache()
                 }
                 .padding(.top, -25)
                 .padding(.bottom, -10)
@@ -118,7 +127,7 @@ struct EditProfileView: View {
                             HStack {
                                 Text("Name")
                                     .foregroundColor(.black)
-                                .fontWeight(.heavy)
+                                    .fontWeight(.heavy)
                                 Spacer()
                             }
                             CustomProfileTextField(message: $name, placeholder: "Add your name")
@@ -133,7 +142,7 @@ struct EditProfileView: View {
                             HStack {
                                 Text("Location")
                                     .foregroundColor(.black)
-                                .fontWeight(.heavy)
+                                    .fontWeight(.heavy)
                                 Spacer()
                             }
                             CustomProfileTextField(message: $location, placeholder: "Add your location")
@@ -148,7 +157,7 @@ struct EditProfileView: View {
                             HStack {
                                 Text("Bio")
                                     .foregroundColor(.black)
-                                .fontWeight(.heavy)
+                                    .fontWeight(.heavy)
                                 Spacer()
                             }
                             CustomProfileBioTextField(bio: $bio)
@@ -164,10 +173,10 @@ struct EditProfileView: View {
                             HStack {
                                 Text("Website")
                                     .foregroundColor(.black)
-                                .fontWeight(.heavy)
+                                    .fontWeight(.heavy)
                                 Spacer()
                             }
-                            CustomProfileTextField(message: $websire, placeholder: "Add your website")
+                            CustomProfileTextField(message: $website, placeholder: "Add your website")
                                 .padding(.leading, 90)
                         }
                     }
@@ -180,10 +189,6 @@ struct EditProfileView: View {
             Spacer()
         }
     }
-}
-
-#Preview {
-    EditProfileView()
 }
 
 extension EditProfileView {

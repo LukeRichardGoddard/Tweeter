@@ -11,7 +11,7 @@ import SwiftUI
 struct Tweeter: App {
     var body: some Scene {
         WindowGroup {
-            EditProfileView().environmentObject(AuthViewModel.shared)
+            ContentView().environmentObject(AuthViewModel.shared)
         }
     }
 }
