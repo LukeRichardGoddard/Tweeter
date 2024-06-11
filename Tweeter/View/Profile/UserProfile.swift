@@ -47,7 +47,7 @@ struct UserProfile: View {
                                 .opacity(blurViewOpacity())
                             
                             VStack(spacing: 5) {
-                                Text(self.user.name)
+                                Text(self.viewModel.user.name)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                                 
@@ -107,48 +107,87 @@ struct UserProfile: View {
                     .padding(.top, -25)
                     .padding(.bottom, -10)
                     
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text(self.user.name)
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.primary)
-                            
-                        Text("@\(self.user.name)")
-                            .foregroundColor(.gray)
-                        
-                        Text("\(self.user.bio ?? "")")
-                        
-                        HStack(spacing: 5) {
-                            Text("\(self.user.followers.count)")
-                                .foregroundColor(.primary)
+                    // PROFILE DATA
+                    
+                    HStack {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(self.viewModel.user.name)
+                                .font(.title2)
                                 .fontWeight(.bold)
-                            
-                            Text("Followers")
+                                .foregroundColor(.primary)
+                                
+                            Text("@\(self.viewModel.user.name)")
                                 .foregroundColor(.gray)
                             
-                            Text("\(self.user.following.count)")
-                                .foregroundColor(.primary)
-                                .fontWeight(.bold)
-                                .padding(.leading, 10)
+                            Text("\(self.viewModel.user.bio ?? "")")
                             
-                            Text("Following")
-                                .foregroundColor(.gray)
-                            
-                        }
-                    }
-                    .overlay(
-                        
-                        GeometryReader { proxy -> Color in
-                        
-                            let minY = proxy.frame(in: .global).minY
-                            DispatchQueue.main.async {
-                                self.titleOffset = minY
+                            HStack(spacing: 8) {
+                                if let userLocation = viewModel.user.location {
+                                    if (userLocation != "") {
+                                        HStack(spacing: 2) {
+                                            Image(systemName: "mappin.circle.fill")
+                                                .frame(width: 24, height: 24)
+                                                .foregroundColor(.gray)
+                                            Text(userLocation)
+                                                .foregroundColor(.gray)
+                                                .font(.system(size: 14))
+                                        }
+                                    }
+                                }
+                                
+                                if let userWebsite = viewModel.user.website {
+                                    if (userWebsite != "") {
+                                        HStack(spacing: 2) {
+                                            Image(systemName: "link")
+                                                .frame(width: 24, height: 24)
+                                                .foregroundColor(.gray)
+                                            Text(userWebsite)
+                                                .foregroundColor(Color(K.Colors.tweeterBlue))
+                                                .font(.system(size: 14))
+                                        }
+                                    }
+                                }
                             }
                             
-                            return Color.clear
+                            HStack(spacing: 5) {
+                                Text("\(self.user.followers.count)")
+                                    .foregroundColor(.primary)
+                                    .fontWeight(.bold)
+                                
+                                Text("Followers")
+                                    .foregroundColor(.gray)
+                                
+                                Text("\(self.user.following.count)")
+                                    .foregroundColor(.primary)
+                                    .fontWeight(.bold)
+                                    .padding(.leading, 10)
+                                
+                                Text("Following")
+                                    .foregroundColor(.gray)
+                                
+                            }
                         }
-                        .frame(width: 0, height: 0), alignment: .top)
+                        .padding(.leading)
+                        .overlay(
+                            
+                            GeometryReader { proxy -> Color in
+                            
+                                let minY = proxy.frame(in: .global).minY
+                                DispatchQueue.main.async {
+                                    self.titleOffset = minY
+                                }
+                                
+                                return Color.clear
+                            }
+                            .frame(width: 0, height: 0), alignment: .top)
                         
+                        Spacer()
+                    }
+                        
+                    
+                    
+                    // Custom segmented menu
+                    
                     VStack(spacing: 0) {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
@@ -183,7 +222,12 @@ struct UserProfile: View {
                     
                     VStack(spacing: 18) {
                         
-                        Text("TBC FEED")
+                        ForEach(viewModel.tweets) { tweet in
+                            
+                            TweetCellView(viewModel: TweetCellViewModel(tweet: tweet))
+                            Divider()
+                            
+                        }
                         
                     }
                     .padding(.top)
