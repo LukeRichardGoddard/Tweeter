@@ -119,8 +119,6 @@ public class AuthServices {
     
     static func makePatchRequestWithAuth(url: URL, reqBody: [String:Any], completion: @escaping (_ result: Result<Data?, NetworkError>) -> Void) {
         
-        print(reqBody)
-        
         let session = URLSession.shared
         
         var request = URLRequest(url: url)
