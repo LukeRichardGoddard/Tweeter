@@ -48,41 +48,41 @@ public class AuthServices {
     
     static func makeRequest(urlString: URL, reqBody: [String:Any], completion: @escaping (_ result: Result<Data?, NetworkError>) -> Void) {
         
-            let session = URLSession.shared
+        let session = URLSession.shared
+        
+        var request = URLRequest(url: urlString)
+        
+        request.httpMethod = "POST"
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: reqBody, options: .prettyPrinted)
+        } catch {
+            print(error)
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTask(with: request) { data, res, err in
             
-            var request = URLRequest(url: urlString)
-            
-            request.httpMethod = "POST"
+            guard err == nil else { return }
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
             
             do {
-                request.httpBody = try JSONSerialization.data(withJSONObject: reqBody, options: .prettyPrinted)
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] {
+                    completion(.success(data))
+                }
             } catch {
+                completion(.failure(.decodingError))
                 print(error)
             }
             
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.addValue("application/json", forHTTPHeaderField: "Accept")
-            
-            let task = session.dataTask(with: request) { data, res, err in
-                
-                guard err == nil else { return }
-                guard let data = data else {
-                    completion(.failure(.noData))
-                    return
-                }
-                
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] {
-                        completion(.success(data))
-                    }
-                } catch {
-                    completion(.failure(.decodingError))
-                    print(error)
-                }
-                
-            }
-            
-            task.resume()
+        }
+        
+        task.resume()
     }
     
     static func fetchUser(id: String, completion: @escaping (_ result: Result<Data?, AuthenticationError>) -> Void) {
@@ -112,6 +112,52 @@ public class AuthServices {
                 completion(.failure(.invalidCredentials))
                 print(error)
             }
+        }
+        
+        task.resume()
+    }
+    
+    static func makePatchRequestWithAuth(url: URL, reqBody: [String:Any], completion: @escaping (_ result: Result<Data?, NetworkError>) -> Void) {
+        
+        print(reqBody)
+        
+        let session = URLSession.shared
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "PATCH"
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: reqBody, options: .prettyPrinted)
+        } catch {
+            print(error)
+        }
+        
+        let token = UserDefaults.standard.object(forKey: "jsonwebtoken")
+        
+        request.addValue("Bearer \(token!)", forHTTPHeaderField: "Authorization")
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTask(with: request) { data, res, err in
+            guard err == nil else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] {
+                    
+                }
+            } catch {
+                completion(.failure(.decodingError))
+                print(error)
+            }
+            
+            completion(.success(data))
         }
         
         task.resume()
