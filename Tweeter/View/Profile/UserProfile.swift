@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct UserProfile: View {
     
@@ -68,7 +69,14 @@ struct UserProfile: View {
                 VStack {
                     HStack {
                         
-                        Image("logo")
+                        KFImage(URL(string: "\(K.Network.server)/users/\(self.viewModel.user.id)/avatar"))
+                            .placeholder({
+                                Image("blankpp")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 75, height: 75)
+                                    .clipShape(Circle())
+                            })
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 75, height: 75)
@@ -91,7 +99,7 @@ struct UserProfile: View {
                                     .stroke(Color.blue, lineWidth: 1.5))
                         })
                         .sheet(isPresented: $editProfileShow) {
-                            
+                            KingfisherManager.shared.cache.clearCache()
                         } content: {
                             EditProfileView(user: $viewModel.user)
                         }
@@ -108,7 +116,7 @@ struct UserProfile: View {
                         Text("@\(self.user.name)")
                             .foregroundColor(.gray)
                         
-                        Text("I don't know what I don't know. So, I try to figure out what I don't know. 42 Founder.")
+                        Text("\(self.user.bio ?? "")")
                         
                         HStack(spacing: 5) {
                             Text("\(self.user.followers.count)")

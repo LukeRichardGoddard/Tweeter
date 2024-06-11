@@ -77,10 +77,11 @@ struct EditProfileView: View {
                 
                 HStack {
                     if profileImage == nil {
+                        
                         Button {
                             imagePickerPresented.toggle()
                         } label: {
-                            KFImage(URL(string: "\(K.Network.server)/users/id/avatar"))
+                            KFImage(URL(string: "\(K.Network.server)/users/\(user.id)/avatar"))
                                 .resizable()
                                 .placeholder {
                                     Image("blankpp")
@@ -107,6 +108,7 @@ struct EditProfileView: View {
                         
                     }
                     else if let image = profileImage {
+                        
                         VStack {
                             image
                                 .resizable()
