@@ -51,7 +51,7 @@ class ProfileViewModel: ObservableObject {
         RequestServices.requestDomain = "\(K.Network.server)/users/\(self.user.id)/follow"
         
         RequestServices.followingProcess(id: self.user.id) { result in
-            // print("followed, \(result)")
+            
         }
         self.user.isFollowed = true
     }
@@ -61,7 +61,7 @@ class ProfileViewModel: ObservableObject {
         RequestServices.requestDomain = "\(K.Network.server)/users/\(self.user.id)/unfollow"
         
         RequestServices.followingProcess(id: self.user.id) { result in
-            // print("followed, \(result)")
+            
         }
         self.user.isFollowed = false
     }

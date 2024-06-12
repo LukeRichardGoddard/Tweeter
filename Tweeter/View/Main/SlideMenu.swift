@@ -135,17 +135,11 @@ struct SlideMenu: View {
                     
                     
                     VStack(alignment: .leading, content: {
-                        Button(action: {
-                            
-                        }, label: {
-                            Text("Create a New Account")
-                                .foregroundColor(Color("bg"))
-                        })
                         
                         Button(action: {
-                            
+                            viewModel.logout()
                         }, label: {
-                            Text("Add an Existing Account")
+                            Text("Log Out")
                                 .foregroundColor(Color("bg"))
                         })
                         
