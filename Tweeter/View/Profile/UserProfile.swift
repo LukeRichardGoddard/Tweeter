@@ -13,6 +13,10 @@ struct UserProfile: View {
     let user: User
     @ObservedObject var viewModel: ProfileViewModel
     
+    var isCurrentUser: Bool {
+        return viewModel.user.isCurrentUser ?? false
+    }
+    
     @State var editProfileShow = false
     @State var offset: CGFloat = 0
     @State var titleOffset: CGFloat = 0
@@ -88,20 +92,33 @@ struct UserProfile: View {
                         
                         Spacer()
                         
-                        Button(action: {
-                            self.editProfileShow.toggle()
-                        }, label: {
-                            Text("Edit Profile")
-                                .foregroundColor(.blue)
-                                .padding(.vertical, 10)
-                                .padding(.horizontal)
-                                .background(Capsule()
+                        if self.isCurrentUser {
+                            Button(action: {
+                                self.editProfileShow.toggle()
+                            }, label: {
+                                Text("Edit Profile")
+                                    .foregroundColor(.blue)
+                                    .padding(.vertical, 10)
+                                    .padding(.horizontal)
+                                    .background(Capsule()
+                                        .stroke(Color.blue, lineWidth: 1.5))
+                            })
+                            .sheet(isPresented: $editProfileShow) {
+                                KingfisherManager.shared.cache.clearCache()
+                            } content: {
+                                EditProfileView(user: $viewModel.user)
+                            }
+                        } else {
+                            Button(action: {
+                                
+                            }, label: {
+                                Text("Follow")
+                                    .foregroundColor(.blue)
+                                    .padding(.vertical, 10)
+                                    .padding(.horizontal)
+                                    .background(Capsule()
                                     .stroke(Color.blue, lineWidth: 1.5))
-                        })
-                        .sheet(isPresented: $editProfileShow) {
-                            KingfisherManager.shared.cache.clearCache()
-                        } content: {
-                            EditProfileView(user: $viewModel.user)
+                            })
                         }
                     }
                     .padding(.top, -25)
