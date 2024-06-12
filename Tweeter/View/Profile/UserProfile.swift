@@ -17,13 +17,17 @@ struct UserProfile: View {
         return viewModel.user.isCurrentUser ?? false
     }
     
+    var isFollowed: Bool {
+        return viewModel.user.isFollowed ?? false
+    }
+    
     @State var editProfileShow = false
     @State var offset: CGFloat = 0
     @State var titleOffset: CGFloat = 0
     @State var currentTab = "Tweets"
     @State var tabBarOffset: CGFloat = 0
     @Namespace var animation
-
+    
     init(user: User) {
         self.user = user
         self.viewModel = ProfileViewModel(user: user)
@@ -45,7 +49,7 @@ struct UserProfile: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: getRect().width, height: minY > 0 ? 180 + minY : 180, alignment: .center)
-                            .cornerRadius(0)
+                                .cornerRadius(0)
                             
                             BlurView()
                                 .opacity(blurViewOpacity())
@@ -110,14 +114,9 @@ struct UserProfile: View {
                             }
                         } else {
                             Button(action: {
-                                self.viewModel.follow()
+                                isFollowed ? self.viewModel.unfollow() : self.viewModel.follow()
                             }, label: {
-                                Text("Follow")
-                                    .foregroundColor(.blue)
-                                    .padding(.vertical, 10)
-                                    .padding(.horizontal)
-                                    .background(Capsule()
-                                    .stroke(Color.blue, lineWidth: 1.5))
+                                CapsuleView(isFollowed: isFollowed)
                             })
                         }
                     }
@@ -132,7 +131,7 @@ struct UserProfile: View {
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.primary)
-                                
+                            
                             Text("@\(self.viewModel.user.name)")
                                 .foregroundColor(.gray)
                             
@@ -188,7 +187,7 @@ struct UserProfile: View {
                         .overlay(
                             
                             GeometryReader { proxy -> Color in
-                            
+                                
                                 let minY = proxy.frame(in: .global).minY
                                 DispatchQueue.main.async {
                                     self.titleOffset = minY
@@ -196,11 +195,11 @@ struct UserProfile: View {
                                 
                                 return Color.clear
                             }
-                            .frame(width: 0, height: 0), alignment: .top)
+                                .frame(width: 0, height: 0), alignment: .top)
                         
                         Spacer()
                     }
-                        
+                    
                     
                     
                     // Custom segmented menu

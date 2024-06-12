@@ -25,4 +25,5 @@ struct User: Identifiable, Codable {
     var followers: [String]
     var following: [String]
     var isCurrentUser: Bool? = false
+    var isFollowed: Bool? = false
 }
