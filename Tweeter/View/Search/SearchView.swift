@@ -12,21 +12,41 @@ struct SearchView: View {
     @State var text = "Search"
     @State var isEditing = false
     
+    @ObservedObject var viewModel = SearchViewModel()
+    
+    init() {
+        viewModel.fetchAllUsers()
+        print("\(self.viewModel.users.count) users")
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             
-            SearchBarView(searchText: $text, isEditing: $isEditing)
-                .padding(.horizontal)
-            
-            if !isEditing {
-                List(1..<20) { i in
-                    SearchCell(tag: "\(i))", tweets: "\(i)")
-                }.listStyle(PlainListStyle())
-            } else {
-                List(1..<9) { i in
-                    SearchUserCell()
-                }.listStyle(PlainListStyle())
+            ScrollView {
+                SearchBarView(searchText: $text, isEditing: $isEditing)
+                    .padding(.horizontal)
+                
+                LazyVStack {
+                    
+                    ForEach(self.viewModel.users) { user in
+                        SearchUserCell(user: user)
+                            .padding(.leading)
+                    }
+                    
+                }
+                
+//                if !isEditing {
+//                    List(1..<20) { i in
+//                        SearchCell(tag: "\(i))", tweets: "\(i)")
+//                    }.listStyle(PlainListStyle())
+//                } else {
+//                    List(1..<9) { i in
+//                        SearchUserCell()
+//                    }.listStyle(PlainListStyle())
+//                }
             }
+            
+
         }
     }
 }

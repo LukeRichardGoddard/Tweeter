@@ -20,14 +20,17 @@ struct SearchBarView: View {
                 .background(Color(.systemGray6))
                 .cornerRadius(20)
                 .overlay {
-                    
+                    HStack {
                         Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
-                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 8)
+                            .foregroundColor(.gray)
+                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 8)
+                    }
                 }
             Button(action: {
                 isEditing.toggle()
+                searchText = ""
+                UIApplication.shared.endEditing()
             }, label: {
                 Text("Cancel")
                     .foregroundColor(.black)
@@ -38,7 +41,6 @@ struct SearchBarView: View {
         .onTapGesture {
             isEditing = true
             searchText = ""
-            UIApplication.shared.endEditing()
         }
     }
 }

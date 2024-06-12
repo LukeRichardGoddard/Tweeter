@@ -20,6 +20,8 @@ enum AuthenticationError: Error {
 
 public class AuthServices {
     
+    public static var requestDomain = ""
+    
     static func login(email: String, password: String, completion: @escaping (_ result: Result<Data?, AuthenticationError>) -> Void) {
         let urlString = URL(string: "\(K.Network.server)/users/login")!
         
@@ -85,12 +87,11 @@ public class AuthServices {
         task.resume()
     }
     
-    static func fetchUser(id: String, completion: @escaping (_ result: Result<Data?, AuthenticationError>) -> Void) {
-        let urlString = URL(string: "\(K.Network.server)/users/\(id)")!
+    static func fetchUser(completion: @escaping (_ result: Result<Data?, AuthenticationError>) -> Void) {
         
         let session = URLSession.shared
         
-        var request = URLRequest(url: urlString)
+        var request = URLRequest(url: URL(string: requestDomain)!)
         
         request.httpMethod = "GET"
         
