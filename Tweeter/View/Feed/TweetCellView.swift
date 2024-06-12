@@ -19,11 +19,22 @@ struct TweetCellView: View {
     var body: some View {
         VStack {
             HStack(alignment: .top, spacing: 10, content: {
-                Image("logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 55, height: 55)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                if let user = viewModel.user {
+                    NavigationLink(destination: UserProfile(user: viewModel.user!)) {
+                        KFImage(URL(string: "\(K.Network.server)/users/\(self.viewModel.tweet.userId)/avatar"))
+                            .placeholder({
+                                Image("blankpp")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 75, height: 75)
+                                    .clipShape(Circle())
+                            })
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 55, height: 55)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    }
+                }
                 
                 VStack(alignment: .leading, spacing: 10, content: {
                     (

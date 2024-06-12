@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 var menuButtons = ["Profile", "Lists", "Topics", "Bookmarks", "Moments"]
 
@@ -22,7 +23,11 @@ struct SlideMenu: View {
             HStack(spacing: 0) {
                 VStack(alignment: .leading) {
                     NavigationLink(destination: UserProfile(user: viewModel.currentUser!)) {
-                        Image("logo")
+                        KFImage(URL(string: "\(K.Network.server)/users/\(self.viewModel.currentUser!.id)/avatar"))
+                            .placeholder({
+                                Image("blankpp")
+                                    .resizable()
+                            })
                             .resizable()
                             .frame(width: 60, height: 60)
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
