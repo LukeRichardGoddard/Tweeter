@@ -240,7 +240,7 @@ struct UserProfile: View {
                         
                         ForEach(viewModel.tweets) { tweet in
                             
-                            TweetCellView(viewModel: TweetCellViewModel(tweet: tweet))
+                            TweetCellView(viewModel: TweetCellViewModel(tweet: tweet, currentUser: AuthViewModel.shared.currentUser!))
                             Divider()
                             
                         }

@@ -12,6 +12,8 @@ struct TweetCellView: View {
     
     @ObservedObject var viewModel: TweetCellViewModel
     
+    var didLike: Bool { return viewModel.tweet.didLike ?? false }
+    
     init(viewModel: TweetCellViewModel) {
         self.viewModel = viewModel
     }
@@ -88,11 +90,21 @@ struct TweetCellView: View {
                 }).foregroundColor(.gray)
                 
                 Button(action: {
-                    self.viewModel.like()
+                    if (self.didLike) {
+                        self.viewModel.unlike()
+                    } else {
+                        self.viewModel.like()
+                    }
                 }, label: {
-                    Image("love")
-                        .resizable()
+                    if (self.didLike) {
+                        Image("love")
+                            .resizable().renderingMode(.template).foregroundColor(.red)
                         .frame(width: 18, height: 15)
+                    } else {
+                        Image("love")
+                            .resizable()
+                        .frame(width: 18, height: 15)
+                    }
                 }).foregroundColor(.gray)
                 
                 Button(action: {
@@ -109,6 +121,3 @@ struct TweetCellView: View {
     }
 }
 
-#Preview {
-    TweetCellView(viewModel: TweetCellViewModel(tweet: Tweet(_id: "6666f71dcaef24bb4329285b", text: "I love flowers", userId: "66669030caef24bb432926a7", username: "Lukerg321", user: "66669030caef24bb432926a7", image: "true", likes: [])))
-}

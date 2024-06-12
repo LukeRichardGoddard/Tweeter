@@ -16,6 +16,7 @@ struct Tweet: Identifiable, Codable {
     let username: String
     let user: String
     let image: String?
-    let likes: [String]
+    var likes: [String]
+    var didLike: Bool? = false
 }
 
