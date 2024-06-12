@@ -33,4 +33,24 @@ class TweetCellViewModel: ObservableObject {
         
     }
     
+    func like() {
+        
+        RequestServices.requestDomain = "\(K.Network.server)/tweets/\(self.tweet.id)/like"
+        
+        RequestServices.likeTweet(id: self.tweet.id) { result in
+            print("The tweet has been liked")
+        }
+        
+    }
+    
+    func unlike() {
+        RequestServices.requestDomain = "\(K.Network.server)/tweets/\(self.tweet.id)/unlike"
+        
+        RequestServices.likeTweet(id: self.tweet.id) { result in
+            print("The tweet has been unliked")
+        }
+        
+        
+    }
+    
 }
