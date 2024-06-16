@@ -161,4 +161,35 @@ public class AuthServices {
         
         task.resume()
     }
+    
+    static func getUsers(vm: SearchViewModel) {
+        if let url = URL(string: "\(K.Network.server)/users") {
+            
+            let session = URLSession.shared
+            
+            var request = URLRequest(url: url)
+            
+            request.httpMethod = "GET"
+            
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
+            let task = session.dataTask(with: request) { data, res, err in
+                guard err == nil else { return }
+                guard let data = data else {
+                    return
+                }
+                
+                do {
+                    let users = try JSONDecoder().decode([User].self, from: data)
+                    vm.loadUsers(theUsers: users)
+                } catch {
+                    print(error)
+                }
+            }
+            
+            task.resume()
+        }
+    }
+    
 }

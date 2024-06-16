@@ -15,8 +15,6 @@ struct SearchView: View {
     @ObservedObject var viewModel = SearchViewModel()
     
     init() {
-        viewModel.fetchAllUsers()
-        print("\(self.viewModel.users.count) users")
     }
     
     var body: some View {
