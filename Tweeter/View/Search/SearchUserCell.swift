@@ -15,10 +15,6 @@ struct SearchUserCell: View {
     var body: some View {
         HStack {
             KFImage(URL(string: "\(K.Network.server)/users/\(self.user.id)/avatar"))
-                .placeholder({
-                    Image("blankpp")
-                        .resizable()
-                })
                 .resizable()
                 .scaledToFit()
                 .frame(width: 44, height: 44)
