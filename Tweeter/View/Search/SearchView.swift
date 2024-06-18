@@ -21,7 +21,7 @@ struct SearchView: View {
         VStack(alignment: .leading) {
             
             ScrollView {
-                SearchBarView(searchText: $text, isEditing: $isEditing)
+                SearchBar(text: $text, isEditing: $isEditing)
                     .padding(.horizontal)
                 
                 LazyVStack {

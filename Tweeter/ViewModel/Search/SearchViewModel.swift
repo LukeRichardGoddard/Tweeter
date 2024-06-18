@@ -13,9 +13,6 @@ class SearchViewModel: ObservableObject {
     
     init() {
         AuthServices.getUsers(vm: self)
-        DispatchQueue.main.async {
-            print("\(self.users.count) users")
-        }
     }
     
     func getUsers(vm: SearchViewModel) -> [User] {
